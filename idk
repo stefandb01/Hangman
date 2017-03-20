@@ -1,1 +1,10 @@
-jsdgfvsef
+import java.util.Scanner;
+public class hangman
+{
+    public static void main (String [] args)
+    {
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Type the word you want.");
+        String word = scan.next();
+    }
+}
