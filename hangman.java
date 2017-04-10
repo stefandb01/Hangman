@@ -7,15 +7,15 @@ public class hangman12
     {
 
         {
-            
-            String words[] = {"Monkey", "Giraffe", "Octopus", "Computer", "Hoodie", "Trousers", "Desktop", "Copper",
-                    "Unite", "Decisive", "Notice", "Educated", "Explain", "Branch", "Talented", "Punishment", "Apparel", "Dangerous",
+
+            String words[] = {"monkey", "giraffe", "octopus", "computer", "hoodie", "trousers", "desktop", "copper",
+                    "Unite", "Decisive", "Notice", "Educated", "explain", "branch", "talented", "punishment", "apparel", "dangerous",
                     "Coherent", "Government", "Defeated", "Pumped", "History", "Troubled", "Heartbreaking","Knowing",
                     "Interest", "Mountain", "Window", "Interest", "Inconclusive", "Balance", "Freezing", "Challenge", "Brutally",
                     "Creative", "definitive", "negative", "molecular", "Blushing", "entertain", "Believing", "Adherence",
                     "Official", "Victory", "Billionaire", "Correlation", "Popular", "Attitude", "Amplitude"};
             Random x = new Random();
-            int index = x.nextInt(words.length + 1);
+            int index = x.nextInt(words.length);
             String wordR = words[index];
 
             System.out.println("Welcome to hangman! You are on death row.");
@@ -25,17 +25,17 @@ public class hangman12
             final int MAX_GUESSES = 6;
             String incorLtrs[] = new String [MAX_GUESSES];
             Scanner scan = new Scanner(System.in);
-            System.out.println("Please enter a word. Enter random if you want a random word");
+            System.out.println("Please enter a word,enter random if you want a random word.");
 
             String word = scan.next();
-             if(word.equalsIgnoreCase("random"))
+            if(word.equalsIgnoreCase("random"))
             {
                 word=wordR;
             }
             String corLtrs[] = new String[word.length()];
-          
+
             wipePage();
-             System.out.println(word);
+
             System.out.println(" ______");
             System.out.println(" |    }");
             System.out.println(" |");
@@ -129,7 +129,7 @@ public class hangman12
                 for( f=0; f < l+1; f++)
                 {
 
-                    if(str[f].equals(guess))
+                    if(str[f].equalsIgnoreCase(guess))
                     {
                         rightCounter++;
                         counter++;
@@ -291,7 +291,7 @@ public class hangman12
             else
             {
                 System.out.println("You lose! The word was "  +  word+".");
-                
+
             }
 
         }
